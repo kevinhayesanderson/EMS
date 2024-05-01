@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "3f3f9bac-f34a-48fd-b75f-2f2295fea072",
+		"name": "EMS",
+		"description": "Employee Management System API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7313097"
+	},
+	"item": [
+		{
+			"name": "GetAllEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7190/api/employees/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7190/api/employees/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEmployee_Error_400",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RoleType",
+						"value": "Employee",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"name\": \"string\",\r\n  \"email\": \"string\",\r\n  \"position\": \"string\",\r\n  \"role\": \"Employee\",\r\n  \"salary\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7190/api/employees/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEmployee_Error_401",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RoleType",
+						"value": "Employee",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"name\": \"string\",\r\n  \"email\": \"string\",\r\n  \"position\": \"string\",\r\n  \"role\": \"Employee\",\r\n  \"salary\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7190/api/employees/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEmployee_OK_200",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RoleType",
+						"value": "Admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"name\": \"string\",\r\n  \"email\": \"string\",\r\n  \"position\": \"string\",\r\n  \"role\": \"Employee\",\r\n  \"salary\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7190/api/employees/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "RoleType",
+						"value": "Admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4,\r\n  \"name\": \"name4\",\r\n  \"email\": \"email4\",\r\n  \"position\": \"position4\",\r\n  \"role\": \"role4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7190/api/employees/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "RoleType",
+						"value": "Admin",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7190/api/employees/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7190",
+					"path": [
+						"api",
+						"employees",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
