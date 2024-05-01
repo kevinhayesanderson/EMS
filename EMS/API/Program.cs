@@ -24,8 +24,8 @@ namespace API
             {
                 options
                 .UseSqlServer(builder.Configuration.GetConnectionString("EmpConnection"))
-                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
-                .EnableSensitiveDataLogging();
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                //.EnableSensitiveDataLogging();
             });
             builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             builder.Services.AddScoped<ValidateAdminRoleType>();
@@ -34,7 +34,7 @@ namespace API
 
             app.UseExceptionHandler(appBuilder =>
             {
-                ////Run method, which adds a terminal middleware delegate to the application’s pipeline.
+                ////Run method, which adds a terminal middleware delegate to the applicationâ€™s pipeline.
                 appBuilder.Run(async httpContext =>
                 {
                     httpContext.Response.ContentType = "application/json";
